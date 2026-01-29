@@ -1,0 +1,23 @@
+{% block content %}
+{% load django_bootstrap5 %}
+<!--Login-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% bootstrap_css %}
+    
+</head>
+<body>
+<div class="container py-5">
+    <h1>Login</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {% bootstrap_form login_form %}
+        {% bootstrap_button "Login" button_type="submit" button_class="btn-primary" %}
+    </form>
+    <p class="text-center">Don't have an account? <a href="/register">Create an
+account</a>.</p>
+</div>
+{% bootstrap_javascript %}
+{% endblock %}
+</body>
