@@ -1,0 +1,21 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+<h2>Login</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <div class="form-group">
+            {{ field }}
+            {% if field.errors %}
+                <small class="error">{{ field.errors|striptags }}</small>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="btn">Login</button>
+</form>
+
+{% endblock %}
